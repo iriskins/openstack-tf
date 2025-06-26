@@ -36,3 +36,12 @@ resource "openstack_networking_subnet_v2" "extern01_subnet" {
   enable_dhcp = false
   gateway_ip = "10.1.1.1"
 }
+
+resource "openstack_networking_router_v2" "router01" {
+  name                = "router01"
+  admin_state_up      = true
+  external_network_id = "86230731-cbe4-49e7-80f7-c1af1e72a078"
+  distributed = true
+  enable_snat = true
+  external_subnet_id = openstack_networking_subnet_v2.extern01_subnet.id
+}
