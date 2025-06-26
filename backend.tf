@@ -6,7 +6,7 @@ terraform {
             version = ">=3.2.0"
         }
     }
-    backend "swift3" {
+    backend "s3" {
         region = "ru-region-one"
         access_key = "~/.aws/credentials"
         secret_key = "~/.aws/credentials"
