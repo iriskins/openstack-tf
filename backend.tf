@@ -7,11 +7,16 @@ terraform {
         }
     }
     backend "s3" {
-        region = "ru-region-one"
-        access_key = "~/.aws/credentials"
-        secret_key = "~/.aws/credentials"
         bucket = "tf-bucket"
-        key = "terraform/state"
+        key = "terraform.tfstate"
+        endpoints = {
+            s3 = "http://10.1.1.3:8080"
+        }
+        region = "us-east-1"
+        force_path_style = true
+        skip_credentials_validation = true
+        insecure = true
+        skip_requesting_account_id = true
     }
 }
 
