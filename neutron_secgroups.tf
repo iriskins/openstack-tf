@@ -44,14 +44,3 @@ resource "openstack_networking_secgroup_rule_v2" "all_egress_V4" {
   ethertype = "IPv4"
   security_group_id = openstack_networking_secgroup_v2.all.id
 }
-
-resource "openstack_networking_floatingip_v2" "floatip_1" {
-  pool       = openstack_networking_network_v2.extern01.name
-  fixed_ip = "192.168.1.66"
-  address = "10.1.1.148"
-}
-
-resource "openstack_networking_floatingip_v2" "floatip_2" {
-  pool       = openstack_networking_network_v2.extern01.name
-  address = "10.1.1.105"
-}
