@@ -1,0 +1,9 @@
+resource "openstack_compute_keypair_v2" "Ilya_Benarit" {
+  name       = "Ilya_Benarit"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2aTAWUgIf6BWnX7IgdpRC4kXWgYLztgLiWhjfbulLiTtCtQsQfYKjDbcUQxY9il5XuhP5XwCw+H1KGD+HQDVNwAqvtTYFbQo3wNU1uIeoFLi4YISDfrkapjhFGnVtWpXwc20WUwPQE2+2se4hvGEYHIP5S4hSAFcp1upGH0E+b7N2zzgWetDFh4+mCFUcJnui39iwb6ZdyJ82slTkz0VdmZZq5wRMagUjrr5DXwB0Pzwr/HxI0ULef7UD1WwhEEbdSsEC427pT4XHs0PSfpiLvZmEj2+Ul2FUuGToRIBV1jKoOBAeWOXHY1oC5iQ9wSkrap0pclf6OIRMltZc/w17 Ilya_Benarit"
+}
+
+resource "openstack_compute_keypair_v2" "test" {
+  name       = "test"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8NLt+8cC1h6KRq0ORV38QobFolpA8/C46Vz5UcJ/MGASaeS6rLksfLe5d1X/kO63ZbUs6N1MDNf+GkELFTtKDOtOx9EvmvbFX4m8qrQyOSwFMthfkXnPA6WeKV1GYaY1W/l3ajAO5fV5Xr33Fnq7xMh75ldQ16kOsN0zFt7lKN1I6eBdZFkKUgDeAki4CO2fxQHGtYLVsHnx9lPfeOFvd3oODu7dD7pcHqewvUJF+9sIUJwO8TafNDKxRBDrehABZhkZS4yDpgpzOup2s+UqGmWcL6Wy8HMOziTHJuZY959ZISkCqgmUOcP2rZKLOg3XwwkTsEOtswdMm0c9LgslF Generated-by-Nova"
+}
