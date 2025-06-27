@@ -9,17 +9,6 @@ resource "openstack_networking_port_v2" "port_01" {
   port_security_enabled = false
 }
 
-resource "openstack_networking_port_v2" "port_02" {
-  name               = "port_02"
-  network_id         = openstack_networking_network_v2.selfservice.id
-  admin_state_up     = true
-  fixed_ip {
-    subnet_id        = openstack_networking_subnet_v2.selfservice_subnet.id
-    ip_address       = "192.168.1.66"
-  }
-  security_group_ids    = [openstack_networking_secgroup_v2.all.id]
-}
-
 resource "openstack_networking_port_v2" "port_03" {
   name               = "port_03"
   network_id         = openstack_networking_network_v2.selfservice.id
@@ -84,4 +73,9 @@ resource "openstack_networking_port_v2" "port_08" {
     ip_address       = "192.168.1.43"
   }
   port_security_enabled = false
+}
+
+data "openstack_networking_port_v2" "gitea_instance_port" {
+  device_id  = openstack_compute_instance_v2.gitea_instance.id
+  network_id = openstack_compute_instance_v2.gitea_instance.network.0.uuid
 }
