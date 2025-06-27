@@ -78,4 +78,5 @@ resource "openstack_networking_port_v2" "port_08" {
 data "openstack_networking_port_v2" "gitea_instance_port" {
   device_id  = openstack_compute_instance_v2.gitea_instance.id
   network_id = openstack_compute_instance_v2.gitea_instance.network.0.uuid
+  depends_on = [openstack_compute_instance_v2.gitea_instance]
 }

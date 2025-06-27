@@ -12,4 +12,10 @@ resource "openstack_compute_instance_v2" "gitea_instance" {
   user_data = "#cloud-config\nhostname: gitea.iriskin.edu\nfqdn: gitea.iriskin.edu\npackage_upgrade: true\npackages:\n  - vim"
   power_state = "active"
   hypervisor_hostname = "cc01.iriskin.edu"
+  depends_on = [
+    openstack_networking_network_v2.selfservice,
+    openstack_compute_keypair_v2.Ilya_Benarit, 
+    openstack_compute_flavor_v2.cherry,
+    openstack_networking_secgroup_v2.all
+  ]
 }
