@@ -4,7 +4,7 @@ resource "openstack_compute_flavor_v2" "m1_tiny" {
 	region = "RegionOne"
     flavor_id = "07eb3c72-c8a1-4178-8d71-710157de9409"
 	vcpus = 1
-	disk = 1
+	disk = 10
 	swap = 0
 	is_public = true
 }
@@ -15,7 +15,7 @@ resource "openstack_compute_flavor_v2" "m2_medium" {
 	region = "RegionOne"
     flavor_id = "24b10941-4bcf-4772-b7cb-2cbb45957c7b"
 	vcpus = 2
-	disk = 0
+	disk = 20
 	extra_specs = {
 	  ":architecture" = "x86_architecture"
 	  ":category" = "general_purpose"
@@ -39,7 +39,7 @@ resource "openstack_compute_flavor_v2" "cherry" {
 	  "hw:numa_nodes" = "1"
 	}
 	vcpus = 2
-	disk = 0
+	disk = 20
 	swap = 0
 	is_public = true
 }
